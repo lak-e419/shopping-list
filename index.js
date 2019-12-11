@@ -1,32 +1,7 @@
 var present = {
   items: []
 };
-$(function() {
-  var formElement = $('#js-shopping-list-form');
-  var listElement = $('.js-shopping-list');
-  var newItemIdentifier = 'js-new-item';
-  var itemDataAttr = 'data-list-item-id';
-  var toggleIdentifier = 'js-shopping-item-toggle'
-  handleItemAdd(
-    formElement, newItemIdentifier,itemDataAttr, listElement, present);
-  handleItemDelete(
-    formElement, removeIdentifier, itemDataAttr, listElement, present);
-  handleItemToggle(
-    listElement, toggleIdentifier, itemDataAttr, itemDataAttr, present);
-});
-var listItemTemplate = (
-  '<li>' +
-    '<span class="shopping-item js-shopping-item"></span>' +
-    '<div class="shopping-item-controls">' +
-      '<button class="js-shopping-item-toggle">' +
-        '<span class="button-label">check</span>' +
-      '</button>' +
-      '<button class="js-shopping-item-delete">' +
-        '<span class="button-label">delete</span>' +
-      '</button>' +
-    '</div>' +
-  '</li>'
-); 
+
 function addItem (present, item) {
   present.items.push ({
     displayName: item,
@@ -83,7 +58,32 @@ function handleItemDelete (
       renderList(present, listElement, itemDataAttr);
     })
   }
-
+$(function() {
+  var formElement = $('#js-shopping-list-form');
+  var listElement = $('.js-shopping-list');
+  var newItemIdentifier = 'js-new-item';
+  var itemDataAttr = 'data-list-item-id';
+  var toggleIdentifier = 'js-shopping-item-toggle'
+  handleItemAdd(
+    formElement, newItemIdentifier,itemDataAttr, listElement, present);
+  handleItemDelete(
+    formElement, removeIdentifier, itemDataAttr, listElement, present);
+  handleItemToggle(
+    listElement, toggleIdentifier, itemDataAttr, itemDataAttr, present);
+});
+var listItemTemplate = (
+  '<li>' +
+    '<span class="shopping-item js-shopping-item"></span>' +
+    '<div class="shopping-item-controls">' +
+      '<button class="js-shopping-item-toggle">' +
+        '<span class="button-label">check</span>' +
+      '</button>' +
+      '<button class="js-shopping-item-delete">' +
+        '<span class="button-label">delete</span>' +
+      '</button>' +
+    '</div>' +
+  '</li>'
+); 
 
 
   
